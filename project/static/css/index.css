@@ -1,0 +1,73 @@
+body
+{
+    font-size: 16px
+    font-family: Tahoma;
+    background: #EFEFFF;
+    color: #333;
+}
+
+a
+{
+    color: #ed1c3f;
+}
+
+.container
+{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.container img
+{
+    width: 50%;
+    min-width: 500px;
+    border: 1px solid #02a0c5;
+    padding: 2px;
+}
+
+h1
+{
+    text-align: center;
+    font-size: 3rem;
+}
+
+h2
+{
+    font-size: 2rem;
+}
+
+.second-lesson table
+{
+    border-spacing: 0;
+}
+
+.second-lesson table th,
+.second-lesson table td
+{
+    border: 1px solid #cde;
+    padding: 5px;
+    text-align: center;
+}
+
+.second-lesson table th
+{
+    color: #00708b;
+}
+
+.second-lesson table tbody th
+{
+    text-align: left;
+}
+
+div > i
+{
+    color: #aaa;
+    font-size: .8rem;
+}
+
+p.article-separator
+{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Flask blog</title>
+        <link rel="stylesheet" href="/static/css/index.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Blog about how to learn Flask with <a href="https://synergy.ru" target="_blank">Synergy</a></h1>
+            <ul class="main-menu">
+                <li><a href="/">Static page for 1-2 lessons</a></li>
+                <li><a href="/dairy">Programmer's dairy</a></li>
+            </ul>
+            {% block content %} {% endblock %}
+        </div>
+    </body>
+</html>

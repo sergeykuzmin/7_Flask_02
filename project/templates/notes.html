@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<form method="post" action="/dairy/add-note" class="dairy-form">
+    <div><label>Post title</label></div>
+    <div><input name="title" placeholder="Enter post title" required="required" /></div>
+    <div><label>Post text</label></div>
+    <div><textarea name="text" placeholder="Enter post here" rows="5" required="required"></textarea></div>
+    <div><button name="add_note" type="submit">Add note</button></div>
+</form>
+<br />
+<hr />
+<div>
+    {% for note in notes %}
+    <article>
+        <h3>{{note}}</h3>
+        <p>{{notes[note]}}</p>
+        <br />
+    </article>
+    {% endfor %}
+</div>
+{% endblock %}

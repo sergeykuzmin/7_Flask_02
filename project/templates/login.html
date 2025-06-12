@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<form method="post" action="/login" class="dairy-form">
+    <div><label>Email</label></div>
+    <div><input name="email" type="email" placeholder="Enter email" required="required" /></div>
+    <div><label>Password</label></div>
+    <div><input name="password" type="password" placeholder="Enter password" required="required" /></div>
+    <div><button name="login" type="submit">Login</button></div>
+</form>
+{% endblock %}

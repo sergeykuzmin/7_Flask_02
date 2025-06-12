@@ -93,4 +93,6 @@ p.article-separator
 .dairy-form textarea
 {
     width: 50%;
+    margin-bottom:15px;
+    padding:5px;
 }

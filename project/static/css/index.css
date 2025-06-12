@@ -75,7 +75,8 @@ h2
     text-align: left;
 }
 
-div > i
+div > i,
+div.posted
 {
     color: #aaa;
     font-size: .8rem;

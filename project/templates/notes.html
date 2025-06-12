@@ -13,9 +13,12 @@
 <div>
     {% for note in notes %}
     <article>
-        <h3>{{note}}</h3>
-        <h3>{{not2222e}}</h3>
-        <p>{{notes[note]}}</p>
+        <h3>{{note.title}}</h3>
+        {% if note.subtitle %}
+            <p>{{note.subtitle}}</p>
+        {% endif %}
+        <p>{{note.text}}</p>
+        <div class="posted">{{note.created.strftime('%Y-%m-%d %H:%M:%S')}}</div>
         <br />
     </article>
     {% endfor %}

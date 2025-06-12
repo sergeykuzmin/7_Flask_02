@@ -1,22 +1,7 @@
-from flask import Flask, render_template, redirect, json, request
+from flask import render_template, redirect, request
 
-app = Flask(__name__)
-
-def saveNotes(data):
-	with open('notes.json', "w", encoding = "UTF8") as file:
-		json.dump(data, file)
-
-def getNotes():
-	data = {}
-
-	try:
-		with open('notes.json', "r+", encoding = "UTF8") as file:
-			data = json.load(file)
-
-	except FileNotFoundError:
-		saveNotes(data)
-
-	return data
+from models.notes import Notes
+from app import app, db
 
 @app.route("/")
 def index():
@@ -24,16 +9,14 @@ def index():
 
 @app.route("/dairy")
 def dairy():
-	data = getNotes()
-	return render_template("notes.html", notes=dict(reversed(data.items())))
+	data = Notes.query.order_by(Notes.created.desc()).all()
+	return render_template("notes.html", notes=data)
 
 @app.route("/dairy/add-note", methods=["POST"])
 def addDairyNote():
-	title = request.form["title"]
-	text = request.form["text"]
-	data = getNotes()
-	data[title] = text
-	saveNotes(data)
+	note = Notes(title=request.form["title"], text=request.form["text"])
+	db.session.add(note)
+	db.session.commit()
 
 	return redirect('/dairy', code=302)
 

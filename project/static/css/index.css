@@ -25,6 +25,22 @@ a
     padding: 2px;
 }
 
+ul.main-menu
+{
+    text-align: center;
+}
+
+ul.main-menu li
+{
+    display: inline-block;
+    padding: 0 10px
+}
+
+ul.main-menu li a
+{
+    color: #0c7ddc;
+}
+
 h1
 {
     text-align: center;
@@ -70,4 +86,10 @@ p.article-separator
     text-align: center;
     font-size: 1.5rem;
     margin-bottom: 3rem;
+}
+
+.dairy-form input,
+.dairy-form textarea
+{
+    width: 50%;
 }
